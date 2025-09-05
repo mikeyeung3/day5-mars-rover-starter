@@ -74,4 +74,14 @@ class DemoTest {
 
         assertEquals("E" , marsRover.getDirection());
     }
+
+    @Test
+    void should_change_direction_to_N_given_command_L_direction_E() {
+        String command = "L";
+
+        MarsRover marsRover = new MarsRover(0, 0, "E");
+        marsRover.execute(command);
+
+        assertEquals("N" , marsRover.getDirection());
+    }
 }
