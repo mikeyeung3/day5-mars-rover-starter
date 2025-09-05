@@ -138,7 +138,7 @@ class DemoTest {
     }
 
     @Test
-    void should_do_nothing_when_batchExecute_with_empty_commands() {
+    void should_do_nothing_given_batchExecute_with_empty_commands() {
         String[] commands = {};
 
         MarsRover marsRover = new MarsRover(5, 5, "S");
@@ -147,5 +147,14 @@ class DemoTest {
         assertEquals(5, marsRover.getX());
         assertEquals(5, marsRover.getY());
         assertEquals("S", marsRover.getDirection());
+    }
+
+    @Test
+    void should_throw_exception_given_batchExecute_contains_invalid_command() {
+        String[] commands = {"M", "X"};
+
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+
+        assertThrows(IllegalStateException.class, () -> marsRover.batchExecute(commands));
     }
 }
