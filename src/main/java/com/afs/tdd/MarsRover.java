@@ -45,7 +45,16 @@ public class MarsRover {
     }
 
     private void turnRight() {
-        direction = "E";
+        switch (direction) {
+            case "N":
+                direction = "E";
+                break;
+            case "E":
+                direction = "S";
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + direction);
+        }
     }
 
     private void turnLeft() {
