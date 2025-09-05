@@ -36,6 +36,20 @@ public class MarsRover {
     }
 
     public void execute(String command) {
-        y++;
+        move();
     }
+
+    private void move() {
+        switch (direction) {
+            case "N":
+                y++;
+                break;
+            case "E":
+                x++;
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + direction);
+        }
+    }
+
 }
