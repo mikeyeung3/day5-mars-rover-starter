@@ -46,7 +46,7 @@ class DemoTest {
     }
 
     @Test
-    void should_turn_left_given_command_L_direction_N() {
+    void should_change_direction_to_W_given_command_L_direction_N() {
         String command = "L";
 
         MarsRover marsRover = new MarsRover(0, 0, "N");
