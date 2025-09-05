@@ -36,7 +36,14 @@ public class MarsRover {
     }
 
     public void execute(String command) {
-        move();
+        if (command.equals("M"))
+            move();
+        else if (command.equals("L"))
+            turnLeft();
+    }
+
+    private void turnLeft() {
+        this.direction = "W";
     }
 
     private void move() {

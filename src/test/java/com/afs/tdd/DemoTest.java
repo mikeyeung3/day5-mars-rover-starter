@@ -44,4 +44,14 @@ class DemoTest {
 
         assertEquals(-1 , marsRover.getX());
     }
+
+    @Test
+    void should_turn_left_given_command_L_direction_N() {
+        String command = "L";
+
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+        marsRover.execute(command);
+
+        assertEquals("W" , marsRover.getDirection());
+    }
 }
