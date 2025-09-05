@@ -34,4 +34,14 @@ class DemoTest {
 
         assertEquals(-1 , marsRover.getY());
     }
+
+    @Test
+    void should_decrease_x_given_command_M_direction_W() {
+        String command = "M";
+
+        MarsRover marsRover = new MarsRover(0, 0, "W");
+        marsRover.execute(command);
+
+        assertEquals(-1 , marsRover.getX());
+    }
 }
