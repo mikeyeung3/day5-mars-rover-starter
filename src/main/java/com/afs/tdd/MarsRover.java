@@ -52,6 +52,12 @@ public class MarsRover {
             case "E":
                 direction = "S";
                 break;
+            case "S":
+                direction = "W";
+                break;
+            case "W":
+                direction = "N";
+                break;
             default:
                 throw new IllegalStateException("Unexpected value: " + direction);
         }
