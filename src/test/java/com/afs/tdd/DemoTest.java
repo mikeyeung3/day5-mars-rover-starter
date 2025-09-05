@@ -137,4 +137,15 @@ class DemoTest {
         assertEquals("N", marsRover.getDirection());
     }
 
+    @Test
+    void should_do_nothing_when_batchExecute_with_empty_commands() {
+        String[] commands = {};
+
+        MarsRover marsRover = new MarsRover(5, 5, "S");
+        marsRover.batchExecute(commands);
+
+        assertEquals(5, marsRover.getX());
+        assertEquals(5, marsRover.getY());
+        assertEquals("S", marsRover.getDirection());
+    }
 }
