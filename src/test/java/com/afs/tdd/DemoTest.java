@@ -2,7 +2,7 @@ package com.afs.tdd;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class DemoTest {
     @Test
@@ -124,4 +124,17 @@ class DemoTest {
 
         assertEquals("N" , marsRover.getDirection());
     }
+
+    @Test
+    void should_execute_sequence_of_commands_given_list_of_move_and_turn() {
+        String[] commands = {"M", "R", "M", "L", "M"};
+
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+        marsRover.batchExecute(commands);
+
+        assertEquals(1, marsRover.getX());
+        assertEquals(2, marsRover.getY());
+        assertEquals("N", marsRover.getDirection());
+    }
+
 }

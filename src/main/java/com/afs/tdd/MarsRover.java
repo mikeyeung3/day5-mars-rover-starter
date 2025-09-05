@@ -1,5 +1,7 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
+
 public class MarsRover {
     private int x;
     private int y;
@@ -108,4 +110,7 @@ public class MarsRover {
         }
     }
 
+    public void batchExecute(String[] commands) {
+        Arrays.stream(commands).forEachOrdered(this::execute);
+    }
 }
