@@ -36,12 +36,12 @@ public class MarsRover {
     }
 
     public void execute(String command) {
-        if (command.equals("M"))
-            move();
-        else if (command.equals("L"))
-            turnLeft();
-        else if (command.equals("R"))
-            turnRight();
+        switch (command) {
+            case "M" -> move();
+            case "L" -> turnLeft();
+            case "R" -> turnRight();
+            default -> throw new IllegalStateException("Unexpected value: " + command);
+        }
     }
 
     private void turnRight() {
