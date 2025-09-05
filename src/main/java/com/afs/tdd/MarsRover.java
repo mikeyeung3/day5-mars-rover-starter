@@ -37,10 +37,17 @@ public class MarsRover {
 
     public void execute(String command) {
         switch (command) {
-            case "M" -> move();
-            case "L" -> turnLeft();
-            case "R" -> turnRight();
-            default -> throw new IllegalStateException("Unexpected value: " + command);
+            case "M":
+                move();
+                break;
+            case "L":
+                turnLeft();
+                break;
+            case "R":
+                turnRight();
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + command);
         }
     }
 
